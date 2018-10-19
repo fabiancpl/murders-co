@@ -1,0 +1,16 @@
+{
+  "name": "interactive-visualization",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Fabian Peña",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.1.3",
+    "d3": "^5.7.0",
+    "jquery": "^3.3.1"
+  }
+}

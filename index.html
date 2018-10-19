@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+
+		<title>Visual Analytics - Homework 4</title>
+
+		<meta charset="utf-8"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- Stylesheets -->
+		<link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+		<link rel="stylesheet" href="./css/styles.css">
+
+		<!-- Scripts -->
+		<script src="./node_modules/jquery/dist/jquery.min.js"></script>
+		<script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script src="./node_modules/d3/dist/d3.min.js"></script>
+
+		<script src="./js/main.js"></script>
+
+		</head>
+		<body>
+  	
+			<div class="container">
+				<div class="row">
+						<div class="col-md-12">
+						<br />
+						<h1 style="text-align: center;">¿Cuál es la población en Colombia con mayor cantidad de homicidios desde el 2010?</h1>
+						<p style="text-align: center;">
+							<b>Por:</b> Fabian Camilo Peña Lozano, Universidad de los Andes, Colombia
+							<br />
+							<b>Fecha:</b> Octubre, 2018
+						</p>
+					</div>
+				</div>
+				<hr />
+				<div class="row">
+					<div class="col-md-6">
+						<select id="attrselection">
+							<option value="edad" selected>Edad</option>
+							<option value="genero">Género</option>
+						</select>
+						<svg id="timeseries" width="1100" height="500"></svg>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<p style="text-align: center;">Colombia es un referente a nivel mundial en términos de haber desarrollado una guerra por más de cinco décadas que ha dejado a su paso una gran cantidad de muertos para todos integrantes del conflicto. Sin embargo, en esta ocasión no solamente se muestran los delitos de homicidio que han tenido lugar en las zonas rurales del país, en su lugar se busca presentar la tendencia nacional desde el año 2010 haciendo énfasis en otros aspectos como el género y la edad.</p>
+						<p style="text-align: center;">Los datos usados en esta interfaz fueron obtenidos mediante la plataforma <a href="https://www.datos.gov.co/" target="_blank">datos.gov.co</a>, son de tipo <b>Temporal</b>, en donde cada <b>Ítem</b> representa un incidente de homicido en alguna zona del país. Se dispone de <b>Attributes</b> de tipo <b>Quantitative Sequential</b> como la fecha en la que ocurrio en incidente y la edad de la persona asesinada, así como otro de tipo <b>Categorical</b> como el género de la misma persona. La base de datos dispone de aproximadamente otros 18 <b>Attributes</b> de diferente tipo que no son tenidos en cuenta para este estudio. El dataset puede llegar a ser de tipo <b>Dynamic</b> dado que la entidad que lo proporciona es la Policia Nacional, quienes disponen de un sistema de información descentralizado para el reporte de este y otros incidentes.</p>
+						<p style="text-align: center;">La figura de la arriba muestra la cantidad de homicidios para un mes específico desde enero del 2010 a diciembre de 2017 dandole al usuario la posibilidad de discriminar su análisis por género o rango de edad de la persona asesinada. La tarea global indentificada, de acuerdo al framework de Tamara Munzner es la de <b>Compare</b> <b>Trends</b> o <b>Similarities</b> de las diferentes series de tiempo mostradas (total de homicidios, discriminado por género, discriminado por rango de edad). Eventualmente, el usuario también podrá estar en la capacidad de <b>Identify</b> <b>Outliers</b> o <b>Extremes</b> para una serie de tiempo específica, por ejemplo al existir un incremento notorio de la cantidad de homicidios para un único año.<p>
+						<p style="text-align: center;">Para el <b>Encode</b>, se utiliza <b>Arrange Express</b> con una <b>Mark</b> de tipo <b>Line</b> apoyada con otra de tipo <b>Point</b> en un <b>Channel</b> de tipo <b>Position on common scale</b>, tanto vertical como horizontal. Se complementa con otros <b>Channels</b> de tipo <b>Tilt</b> para dar una impresión del grado de aumento o disminución de la cantidad de homicidios, y <b>Color Hue</b> para permitir la diferenciación de las series de tiempo. La visualización utiliza un <b>Facet</b> de tipo <b>Superimpose</b> con un <b>Filter</b> que permite cambiar la dimensión de las series visualizadas (género o rango de edad).</p>
+						<p style="text-align: center;">El primer aspecto importante a mencionar es la reducción en la cantidad de homicidios en términos mensuales. Mientras que a finales del 2012 se reportaron una cantidad de homicidios en todo el país superior a 1.400, para los primeros meses del año 2017 se evidencia una cantidad de reportes inferior a 1.000 con un notable aumento al final del año. Al realizar el análisis discriminado por género, es evidente que el género masculino tiene una participación superior al 90% en los reportes de homicidios para todos los meses desde el año 2010. Con respecto a la edad, aún cuando la diferencia no es tan marcada como en el análisis por género, si es claro que en Colombia los homicidios ocurren en mayor medida en personas que se encuentran entre los 18 y los 29 años de edad. Es importante mencionar que estas cifras no se encuentran normalizadas por cantidad de habitantes para cada grupo de población, solo se habla en términos de reportes globales.</p>
+					</div>
+				</div>
+				<hr />
+				<div class="row">
+					<div class="col-md-12">
+						<p style="text-align: center;"><a href="https://github.com/fabiancpl/murders-co" target="_blank">GitHub repository</a></p>
+					</div>
+				</div>
+			</div>
+	</body>
+</html>
